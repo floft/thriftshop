@@ -1,0 +1,13 @@
+name: "Spruced-Up Thrift Shop"
+description: "Spruced-Up Thrift Shop"
+
+url: "http://thriftshop.floft.net"
+
+include: ['_pages']
+
+defaults:
+  -
+    scope:
+        path: ""
+    values:
+        layout: "default"

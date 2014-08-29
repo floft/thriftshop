@@ -1,0 +1,52 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>{% if page.title == "Home" %}{{ site.description }}{% else %}{{ page.title }} - {{ site.name }}{% endif %}</title>
+<style type="text/css">
+body {background: #8B0000; margin:0px;}
+div.header {position:absolute; left:140px; top:8px; height:93px; width:545px;}
+div.footer {position:relative; left:100px; top:81px; height:20px; width:600px; text-align:center;}
+
+div.lh {background:url("{{ site.baseurl }}/images/head.gif") 0 0; height:93px; width:15px; position:relative; left:0px;}
+div.h {color:#FFFFFF; font-weight:bold; font-size: 110%; background:url("{{ site.baseurl }}/images/head_center.gif") repeat-x; height:93px; width:515px; text-align:center; position:relative; left:15px; top:-93px; padding-top:8px;}
+div.rh {background:url("{{ site.baseurl }}/images/head.gif") 15px 0; height:93px; width:15px;  position:relative; left:530px; top:-194px;}
+
+div.tl {position:relative; left:-41px; top:-196px; background:url("{{ site.baseurl }}/images/corners.gif") 0 0; width:20px; height:20px; z-index:3;}
+div.tr {position:relative; left:561px; top:-216px; background:url("{{ site.baseurl }}/images/corners.gif") 20px 0; width:20px; height:20px; z-index:3;}
+div.bl {position:relative; left:-1px; top:0px; background:url("{{ site.baseurl }}/images/corners.gif") 0 20px; width:20px; height:20px; z-index:3;}
+div.br {position:relative; left:601px; top:-20px; background:url("{{ site.baseurl }}/images/corners.gif") 20px 20px; width:20px; height:20px; z-index:3;}
+
+div.menu {position:absolute; left:0px; top:123px; width:115px; z-index:2;}
+div.main {background: #FFFFFF; position:relative; left:100px; top:100px; padding:10px 0 15px 30px; width:590px;}
+div.inner {width:570px;}
+
+div.menu a {color:#000000; text-decoration:none; background:url("{{ site.baseurl }}/images/buttons.gif") no-repeat; display:block; width:115px; height:24px; text-align:center; margin-bottom: 3px; padding-top:3px;}
+div.menu a:hover {color:#FFFFFF; background:url("{{ site.baseurl }}/images/buttons.gif") 115px 0;}
+#current {font-weight:bold; text-decoration:underline;}
+
+<!--[if IE]>div.tl, div.tr, div.bl, div.br {display:none}<![endif]-->
+</style>
+</head>
+<body>
+<div class="header">
+<div class="lh"></div>
+<div class="h">
+<img src="{{ site.baseurl }}/images/text.gif" alt="Spruced-Up Thrift Shop"><br />328 E. Fairhaven Ave., Burlington, WA 98233&nbsp;&nbsp;&nbsp;(360) 755-1141
+</div>
+<div class="rh"></div>
+<div class="tl"></div>
+<div class="tr"></div>
+</div>
+<div class="menu">
+{% capture loc %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture %}
+<a {% if loc == ""          %}id="current" {% endif %}href="{{ site.baseurl }}/">Home</a>
+<a {% if loc == "hours"     %}id="current" {% endif %}href="{{ site.baseurl }}/hours">Hours</a>
+<a {% if loc == "donate"    %}id="current" {% endif %}href="{{ site.baseurl }}/donate">Donate</a>
+<a {% if loc == "volunteer" %}id="current" {% endif %}href="{{ site.baseurl }}/volunteer">Volunteer</a>
+<a {% if loc == "about"     %}id="current" {% endif %}href="{{ site.baseurl }}/about">About Us</a>
+<a {% if loc == "links"     %}id="current" {% endif %}href="{{ site.baseurl }}/links">Links</a>
+</div>
+<div class="main">
+<div class="inner">
